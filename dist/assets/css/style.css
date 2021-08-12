@@ -1,0 +1,75 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #3471eb;
+    height: 75px;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+}
+
+.nav {
+    border-right: solid 1px #a9a9a9;
+    width: 20%;
+    height: calc(100vh - 75px);
+    padding: 0 0 0 2em;
+    display: flex;
+    flex-direction: column;
+    background-color: #e8e8e8;
+}
+
+.display {
+    width: 80%;
+}
+
+.contents {
+    height: 33vh;
+    border-bottom: 1px solid #a9a9a9;
+}
+
+.projects {
+    height: 66vh;
+}
