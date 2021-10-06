@@ -71,7 +71,8 @@ const Ui = (() => {
 
     return {
         cwosantLog,
-        startNewProject
+        startNewProject,
+        addProject
     }
 })();
 

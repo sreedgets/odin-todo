@@ -1,5 +1,6 @@
 import Ui from './ui';
 import projectStorage from './projectStorage';
+import Project from './project';
 
 const Init = (() => {
     function loadHome() {
@@ -8,7 +9,13 @@ const Init = (() => {
     }
 
     function displayProjects() {
-        projectStorage.getProjects();
+        projectStorage.addStorage();
+        projectStorage.updateProjectArray();
+        let projectsToShow = projectStorage.getProjects();
+
+        projectsToShow.forEach( project => {
+            Ui.addProject(project);
+        });
     }
 
     function addListeners() {

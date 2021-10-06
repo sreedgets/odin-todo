@@ -15,8 +15,8 @@ const projectStorage = (() => {
         return JSON.parse(localStorage.getItem('projects'));
     }
 
-    function updateStorageArray() {
-
+    function updateProjectArray() {
+        _projects = getStorage();
     }
 
     function getProjects() {
@@ -25,6 +25,7 @@ const projectStorage = (() => {
 
     function saveProjects(projectName) {
         const newProject = Project(projectName);
+        updateProjectArray();
         _projects.push(newProject.getName());
 
         localStorage.setItem('projects', JSON.stringify(getProjects()));
@@ -44,7 +45,8 @@ const projectStorage = (() => {
         getStorage,
         getProjects,
         saveProjects,
-        deleteProject
+        deleteProject,
+        updateProjectArray
     }
 
 })();
