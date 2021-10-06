@@ -2,10 +2,11 @@ import Project from "./project";
 import Ui from "./ui";
 
 const projectStorage = (() => {
-    let _projects = ['Default Project'];
+    let _projects = [];
 
     function addStorage() {
         if(!localStorage.getItem('projects')) {
+            _projects.push('default project');
             localStorage.setItem('projects', JSON.stringify(getProjects()));
         }
     }
@@ -15,7 +16,7 @@ const projectStorage = (() => {
     }
 
     function updateStorageArray() {
-        
+
     }
 
     function getProjects() {

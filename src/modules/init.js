@@ -1,8 +1,14 @@
 import Ui from './ui';
+import projectStorage from './projectStorage';
 
 const Init = (() => {
     function loadHome() {
+        displayProjects();
         addListeners();
+    }
+
+    function displayProjects() {
+        projectStorage.getProjects();
     }
 
     function addListeners() {
