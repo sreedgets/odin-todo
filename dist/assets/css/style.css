@@ -63,6 +63,7 @@ main {
 
 .display {
     width: 80%;
+    padding: 2em;
 }
 
 .contents {
@@ -72,4 +73,34 @@ main {
 
 .projects {
     height: 66vh;
+    margin-right: 1em;
+}
+
+.project-container {
+    border: 2px solid #000;
+    margin: 0 0 .5em 0;
+}
+
+.project-create {
+    border: 2px solid #000;
+}
+
+.project-title, .project-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-project {
+    align-self: center;
+    cursor: pointer;
+}
+
+.delete-project {
+    align-self: center;
+    display: none;
+    cursor: pointer;
+}
+
+.projects:hover .delete-project {
+    display: initial;
 }
