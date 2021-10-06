@@ -14,6 +14,10 @@ const projectStorage = (() => {
         return JSON.parse(localStorage.getItem('projects'));
     }
 
+    function updateStorageArray() {
+        
+    }
+
     function getProjects() {
         return _projects;
     }
