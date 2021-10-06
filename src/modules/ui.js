@@ -1,5 +1,5 @@
 import Project from "./project";
-import Storage from "./storage";
+import projectStorage from "./projectStorage";
 
 const Ui = (() => {
     function startNewProject() {
@@ -25,7 +25,7 @@ const Ui = (() => {
                 createProject.remove();
                 getAddProject.style.display = 'block';
                 //add new project
-                Storage.saveProjects(projectName);
+                projectStorage.saveProjects(projectName);
                 addProject(projectName);
             }
         });

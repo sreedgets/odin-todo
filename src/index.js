@@ -1,7 +1,9 @@
 import Init from './modules/init';
+import projectStorage from './modules/projectStorage';
 
 document.addEventListener('DOMContentLoaded', () => {
     Init.loadHome();
+    projectStorage.addStorage();
 });
 
 /*
