@@ -14,7 +14,7 @@ const Init = (() => {
         let projectsToShow = projectStorage.getProjects();
 
         projectsToShow.forEach( project => {
-            Ui.addProject(project);
+            Ui.addProject(project.taskName);
         });
     }
 

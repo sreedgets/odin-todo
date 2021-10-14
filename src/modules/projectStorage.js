@@ -1,4 +1,5 @@
 import Project from "./project";
+import uniqid from 'uniqid';
 import Ui from "./ui";
 
 const projectStorage = (() => {
@@ -6,7 +7,12 @@ const projectStorage = (() => {
 
     function addStorage() {
         if(!localStorage.getItem('projects')) {
-            _projects.push('default project');
+            _projects.push(
+                    {
+                        taskName: 'default project',
+                        taskId: uniqid()
+                    }
+                );
             localStorage.setItem('projects', JSON.stringify(getProjects()));
         }
     }
@@ -26,7 +32,12 @@ const projectStorage = (() => {
     function saveProjects(projectName) {
         const newProject = Project(projectName);
         updateProjectArray();
-        _projects.push(newProject.getName());
+        _projects.push(
+                {
+                    taskName: newProject.getName(),
+                    taskId: newProject.getId()
+                }
+            );
 
         localStorage.setItem('projects', JSON.stringify(getProjects()));
 
@@ -36,8 +47,12 @@ const projectStorage = (() => {
         */
     }
 
-    function deleteProject() {
-        console.log('cwosant');
+    function deleteProject(projectId) {
+        const index = _projects.findIndex( object => object.taskId === projectId);
+
+        updateProjectArray();
+        _projects.splice(index, 1);
+        localStorage.setItem('projects', JSON.stringify(getProjects()));
     }
 
     return {

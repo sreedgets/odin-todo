@@ -1,8 +1,10 @@
+import uniqid from 'uniqid';
+
 //class for projects and their tasks
 const Project = (name) => {
     let _name = name;
     let _tasks = [];
-    let _position;
+    let _Id = uniqid();
 
     function getName() {
         return _name;
@@ -16,19 +18,14 @@ const Project = (name) => {
         return _tasks
     }
 
-    function setPosition(index) {
-        _position = index;
-    }
-
-    function getPosition() {
-        return _position;
+    function getId() {
+        return _Id;
     }
 
     return {
         getName,
         setName,
-        getPosition,
-        setPosition,
+        getId,
         getTasks
     };
 }

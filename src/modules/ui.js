@@ -51,18 +51,31 @@ const Ui = (() => {
         const newProject = Project(name);
         const projectContainer = document.createElement('div');
         projectContainer.className = 'project-container';
+        projectContainer.id = newProject.getId();
 
         const h2 = document.createElement('h2');
         h2.innerText = newProject.getName();
 
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-project';
+        deleteBtn.id = newProject.getId();
         deleteBtn.innerText = 'X';
+        deleteBtn.addEventListener('click', deleteProject);
 
         h2.appendChild(deleteBtn);
         projectContainer.appendChild(h2);
         projectBox.appendChild(projectContainer);
 
+    }
+
+    function deleteProject(element) {
+        const projectContainer = document.querySelector('.projects');
+        const projectId = element.target.id;
+        const projectToDelete = document.getElementById(projectId);
+        projectContainer.removeChild(projectToDelete);
+
+        //remove project from storage
+        projectStorage.deleteProject(projectId);
     }
 
     function cwosantLog() {
